@@ -18,12 +18,15 @@ public class UserAccountManager implements AccountManager {
         this.accounts = new ArrayList<>();
     }
 
+    
     @Override
     public void addAccount(Account account) {
-        if (!this.accounts.contains(account)) {
-            this.accounts.add(account);
-        }
+    if (account == null || this.accounts.contains(account)) {
+        return; 
     }
+    this.accounts.add(account);
+}
+
 
     @Override
     public void removeAccount(Account account) {

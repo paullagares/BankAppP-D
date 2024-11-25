@@ -46,7 +46,7 @@ public class UserController {
                 return new Response("Age must be numeric", Status.BAD_REQUEST);
             }
 
-            User newUser = new User(idInt, firstname, lastname, ageInt,accountManager);
+            User newUser = new User(idInt, firstname, lastname, ageInt);
 
             UserStorage storage = UserStorage.getInstance();
             if (!storage.addUser(newUser)) {
@@ -61,8 +61,6 @@ public class UserController {
     public ArrayList<Object[]> getAllUsers() {
     UserStorage storage = UserStorage.getInstance();
     ArrayList<User> users = storage.getUsers();
-        System.out.println("b "+UserStorage.getInstance());
-        System.out.println("bbbb"+users);
     users.sort((obj1, obj2) -> obj1.getId() - obj2.getId());
 
     ArrayList<Object[]> tableData = new ArrayList<>();

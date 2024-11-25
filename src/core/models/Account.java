@@ -17,14 +17,20 @@ public class Account implements BankOperations {
 
    
     public Account(String id, User owner) {
-        this(id, owner, 0);
+    this(id, owner, 0);
+    if (owner != null) {
+        owner.addAccount(this);
     }
+}
+
 
     public Account(String id, User owner, double balance) {
         this.id = id;
         this.owner = owner;
         this.balance = balance;
+        if (!this.owner.getAccounts().contains(this)) {
         this.owner.addAccount(this);
+    }
     }
 
     public String getId() {

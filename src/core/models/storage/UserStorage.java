@@ -35,14 +35,6 @@ public class UserStorage {
             }
         }
         this.users.add(user);
-                System.out.println("Número de usuarios: " + this.users.size());
-
-        System.out.println("Usuarios actuales en la lista:");
-        for (User u : users) {
-            System.out.println("ID: " + u.getId() + ", Nombre: " + u.getFirstname() + ", Apellido: " + u.getLastname() + ", Edad: " + u.getAge()+ "num acc" +u.getNumAccounts());
-        }
-
-
         return true;
     }
 public ArrayList<User> getUsers() {

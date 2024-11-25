@@ -631,15 +631,16 @@ public class BankFrame extends javax.swing.JFrame {
 
     private void refreshAccountsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshAccountsButtonActionPerformed
         // TODO add your handling code here:
-    DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-    model.setRowCount(0);
+
 
     AccountController accountController = new AccountController();
-    ArrayList<Account> accounts = accountController.getAllAccountsSorted();
-
+    ArrayList<Object[]> tableData = accountController.getAllAccountsSorted();
     
-        for (Account account : accounts) {
-            model.addRow(new Object[]{account.getId(), account.getOwner().getId(), account.getBalance()});
+    DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+    model.setRowCount(0);
+    
+        for (Object[] rowData : tableData) {
+            model.addRow(rowData);
         }
     
 

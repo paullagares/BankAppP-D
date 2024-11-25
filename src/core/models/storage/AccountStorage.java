@@ -29,15 +29,14 @@ public boolean addOwner(Account account) {
    
     for (Account a : this.accounts) {
         if (a.getId().equals(account.getId())) {
-            System.out.println("La cuenta con ID " + account.getId() + " ya está registrada.");
+  
             return false; 
         }
     }
 
-    
-    System.out.println("Agregando cuenta con ID: " + account.getId());
+ 
     this.accounts.add(account);
-    System.out.println("Tamaño actual de la lista de cuentas: " + this.accounts.size());
+
     return true;
 }
 

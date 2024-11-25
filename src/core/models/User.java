@@ -15,14 +15,14 @@ public class User {
     private String firstname;
     private String lastname;
     private int age;
-    private AccountManager accountManager;
+    private AccountManager  accountManager;
 
-    public User(int id, String firstname, String lastname, int age, AccountManager accountManager) {
+    public User(int id, String firstname, String lastname, int age) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.age = age;
-        this.accountManager = accountManager;
+         this.accountManager = new UserAccountManager();
     }
 
     public int getId() {
@@ -50,7 +50,9 @@ public class User {
         return this.accountManager.getAccounts();
     }
 
-    public int getNumAccounts() {
-        return this.accountManager.getNumAccounts();
-    }
+public int getNumAccounts() {
+    int numAccounts = this.accountManager.getNumAccounts();
+    return numAccounts;
+}
+
 }
