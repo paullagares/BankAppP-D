@@ -1,2 +1,2 @@
 # BankApp
-Paul Lagares y Daniel beltran
+Paul Lagares y Daniel beltran PARCIAL 3
